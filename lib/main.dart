@@ -4,6 +4,7 @@ import 'package:tmp/view/classes/classes_view.dart';
 import 'package:tmp/view/info/info_view.dart';
 import 'package:tmp/view/message/message_view.dart';
 import 'package:tmp/view/my_list/my_list_view.dart';
+import 'package:tmp/view/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,8 +22,13 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'TutorUniv',
-      initialRoute: '/classes',
+      initialRoute: '/splash',
       getPages: [
+        GetPage(
+          name: '/splash',
+          page: () => Splash(),
+          transition: Transition.noTransition
+        ),
         GetPage(
           name: '/classes',
           page: () => ClassesView(),
