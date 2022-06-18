@@ -1,0 +1,4 @@
+#Sun Jun 19 02:29:52 KST 2022
+base.0=C\:\\Users\\binu2\\OneDrive\\Graduate\\2022_1\\Start-up 503\\tutor_univ\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
