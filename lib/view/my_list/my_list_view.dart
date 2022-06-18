@@ -4,6 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:tmp/controllers/app_controller.dart';
 import 'package:tmp/view/classes/class_card.dart';
+import 'package:tmp/view/my_list/my_list_card_student.dart';
+import 'package:tmp/view/my_list/my_list_card_teacher.dart';
 
 import '../bottom_nav.dart';
 
@@ -77,20 +79,27 @@ class _MyListViewState extends State<MyListView> {
                 ],
               ),
             ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 80,
+            GestureDetector(
+              onTap: () {
+                appController.appMode.value == Mode.Tutor
+                  ? Get.toNamed('/dashboard_teacher')
+                  : Get.toNamed('/dashboard_student');
+              },
               child: Container(
-                margin: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.1,
-                ),
-                child: Text(
-                  appController.appMode.value == Mode.Tutor
-                    ? 'Teaching\nDashboard'
-                    : 'Learning\nDashboard',
-                  style: TextStyle(
-                    fontSize: 34,
-                    fontWeight: FontWeight.w800
+                width: MediaQuery.of(context).size.width,
+                height: 80,
+                child: Container(
+                  margin: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.1,
+                  ),
+                  child: Text(
+                    appController.appMode.value == Mode.Tutor
+                      ? 'Teaching\nDashboard'
+                      : 'Learning\nDashboard',
+                    style: TextStyle(
+                      fontSize: 34,
+                      fontWeight: FontWeight.w800
+                    ),
                   ),
                 ),
               ),
@@ -101,14 +110,9 @@ class _MyListViewState extends State<MyListView> {
             ),
             Expanded(
               child: ListView(
-                children: [
-                  ClassCard(),
-                  SizedBox(
-                    width: 1,
-                    height: 10,
-                  ),
-                  ClassCard()
-                ],
+                children: appController.appMode.value == Mode.Tutor
+                  ? [MyListCardT(), MyListCardT(), MyListCardT()]
+                  : [MyListCardS(), MyListCardS()]
               ),
             )
           ]

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tmp/view/classes/class_detail.dart';
 import 'package:tmp/view/classes/classes_view.dart';
 import 'package:tmp/view/info/info_view.dart';
+import 'package:tmp/view/join/join.dart';
 import 'package:tmp/view/message/message_view.dart';
+import 'package:tmp/view/my_list/dashboard_student.dart';
+import 'package:tmp/view/my_list/dashboard_teacher.dart';
 import 'package:tmp/view/my_list/my_list_view.dart';
 import 'package:tmp/view/splash.dart';
 
@@ -30,13 +34,33 @@ class _MyAppState extends State<MyApp> {
           transition: Transition.noTransition
         ),
         GetPage(
+          name: '/join',
+          page: () => Join(),
+          transition: Transition.noTransition
+        ),
+        GetPage(
           name: '/classes',
           page: () => ClassesView(),
           transition: Transition.noTransition
         ),
         GetPage(
+          name: '/class_detail',
+          page: () => ClassDetail(),
+          transition: Transition.noTransition
+        ),
+        GetPage(
           name: '/myList',
           page: () => MyListView(),
+          transition: Transition.noTransition
+        ),
+        GetPage(
+          name: '/dashboard_teacher',
+          page: () => DashboardT(),
+          transition: Transition.noTransition
+        ),
+        GetPage(
+          name: '/dashboard_student',
+          page: () => DashboardS(),
           transition: Transition.noTransition
         ),
         GetPage(

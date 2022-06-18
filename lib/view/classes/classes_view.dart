@@ -118,52 +118,40 @@ class _ClassesViewState extends State<ClassesView> {
                     width: 1,
                     height: 20,
                   ),
-                  Expanded(
-                    child: ListView(
-                      children: [
-                        ClassCard(),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        ClassCard(),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        ClassCard(),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        ClassCard(),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        ClassCard(),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        ClassCard(),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        ClassCard(),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        ClassCard(),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        ClassCard(),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        ClassCard(),
-                        SizedBox(
-                          height: 10,
-                        ),
-                      ],
-                    ),
+                SizedBox(
+                  width: 1,
+                  height: 20,
+                ),
+                Expanded(
+                  child: ListView(
+                    children: [
+                      ClassCard(),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
+                      ClassCard(),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
+                      ClassCard(),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
+                      ClassCard(),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
+                      ClassCard(),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
+                      ClassCard(),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
+                    ],
                   ),
+                )
                 ],
               )
             )
