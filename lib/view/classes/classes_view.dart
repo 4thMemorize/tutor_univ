@@ -101,29 +101,29 @@ class _ClassesViewState extends State<ClassesView> {
                   child: ListView(
                     children: [
                       ClassCard(),
-                      SizedBox(
-                        height: 10,
-                      ),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
                       ClassCard(),
-                      SizedBox(
-                        height: 10,
-                      ),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
                       ClassCard(),
-                      SizedBox(
-                        height: 10,
-                      ),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
                       ClassCard(),
-                      SizedBox(
-                        height: 10,
-                      ),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
                       ClassCard(),
-                      SizedBox(
-                        height: 10,
-                      ),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
                       ClassCard(),
-                      SizedBox(
-                        height: 10,
-                      ),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
                     ],
                   ),
                 ),

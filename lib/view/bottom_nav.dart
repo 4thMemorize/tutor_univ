@@ -102,8 +102,8 @@ class BottomNavBar extends StatelessWidget {
                         width: 24,
                         child: Icon(
                           currentTab == Routes.info
-                          ? Icons.person
-                          : Icons.perm_identity_outlined,
+                          ? Icons.school
+                          : Icons.school_outlined,
                           size: 30,
                         )
                       ),
