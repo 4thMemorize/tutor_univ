@@ -120,7 +120,7 @@ class _ClassDetailState extends State<ClassDetail> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Classsssssss\nName',
+                      '${classController.selectedClass!.name} Class',
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.w800

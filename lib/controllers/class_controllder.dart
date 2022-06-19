@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:tmp/data/tutoting.dart';
+import 'package:tmp/data/tutoring.dart';
 
 class ClassController extends GetxController {
   List<Tutoring> classes = [

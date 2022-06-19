@@ -3,7 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:tmp/controllers/class_controllder.dart';
-import 'package:tmp/data/tutoting.dart';
+import 'package:tmp/data/tutoring.dart';
 
 import 'class_factory.dart';
 

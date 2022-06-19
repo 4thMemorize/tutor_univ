@@ -5,6 +5,7 @@ import 'package:tmp/view/classes/class_detail.dart';
 import 'package:tmp/view/classes/classes_view.dart';
 import 'package:tmp/view/info/info_view.dart';
 import 'package:tmp/view/join/join.dart';
+import 'package:tmp/view/message/message_room.dart';
 import 'package:tmp/view/message/message_view.dart';
 import 'package:tmp/view/my_list/dashboard_student.dart';
 import 'package:tmp/view/my_list/dashboard_teacher.dart';
@@ -68,6 +69,11 @@ class _MyAppState extends State<MyApp> {
         GetPage(
           name: '/message',
           page: () => MessageView(),
+          transition: Transition.noTransition
+        ),
+        GetPage(
+          name: '/message_room',
+          page: () => MessageRoom(),
           transition: Transition.noTransition
         ),
         GetPage(

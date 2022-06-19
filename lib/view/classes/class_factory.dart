@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tmp/controllers/class_controllder.dart';
-import 'package:tmp/data/tutoting.dart';
+import 'package:tmp/data/tutoring.dart';
 
 class ClassFactory {
 
