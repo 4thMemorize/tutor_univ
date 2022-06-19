@@ -3,6 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:tmp/controllers/app_controller.dart';
+import 'package:tmp/controllers/class_controllder.dart';
 import 'package:tmp/view/bottom_nav.dart';
 
 class ClassDetail extends StatefulWidget {
@@ -14,6 +15,7 @@ class ClassDetail extends StatefulWidget {
 
 class _ClassDetailState extends State<ClassDetail> {
   final AppController appController = Get.find<AppController>();
+  final ClassController classController = Get.find<ClassController>();
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,8 @@ class _ClassDetailState extends State<ClassDetail> {
 
   Widget getBody() {
     return SafeArea(
-      child: Obx(() {
+      child: GetBuilder<ClassController>(
+        builder: (bcontext) {
         return Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
@@ -52,7 +55,7 @@ class _ClassDetailState extends State<ClassDetail> {
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.width * (9/16),
                       child: Image.asset(
-                        'assets/cover.jpeg',
+                        classController.selectedClass!.path,
                         fit: BoxFit.cover,
                       ),
                     )
@@ -65,29 +68,31 @@ class _ClassDetailState extends State<ClassDetail> {
                         GestureDetector(
                           behavior: HitTestBehavior.translucent,
                           onTap: () => appController.changeMode(),
-                          child: Container(
-                            margin: EdgeInsets.only(
-                              left: MediaQuery.of(context).size.width * 0.05
-                            ),
-                            width: 70,
-                            height: 30,
-                            decoration: BoxDecoration(
-                              color: appController.appMode.value == Mode.Tutee
-                            ? Color(0xFF33FFCC)
-                            : Color(0xFF33CCFF),
-                              borderRadius: BorderRadius.circular(15)
-                            ),
-                            child: Center(
-                              child: Text(
-                                appController.appMode.value.toShortString(),
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 17,
+                          child: Obx(() {
+                            return Container(
+                              margin: EdgeInsets.only(
+                                left: MediaQuery.of(context).size.width * 0.05
+                              ),
+                              width: 70,
+                              height: 30,
+                              decoration: BoxDecoration(
+                                color: appController.appMode.value == Mode.Tutee
+                              ? Color(0xFF33FFCC)
+                              : Color(0xFF33CCFF),
+                                borderRadius: BorderRadius.circular(15)
+                              ),
+                              child: Center(
+                                child: Text(
+                                  appController.appMode.value.toShortString(),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 17,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
+                            );
+                          })
                         )
                       ],
                     ),
@@ -146,6 +151,35 @@ class _ClassDetailState extends State<ClassDetail> {
                     desc(),
                     desc(),
                     desc(),
+                    GestureDetector(
+                      onTap: () {
+
+                      },
+                      child: Container(
+                        child: Container(
+                          // width: 300,
+                          height: 60,
+                          margin: EdgeInsets.only(
+                            left: 80,
+                            right: 80,
+                            bottom: 60
+                          ),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Color(0xFF33FFCC)
+                          ),
+                          child: Text(
+                            'Inquiry',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 28,
+                              fontWeight: FontWeight.w800
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
                   ],
                 ),
               )

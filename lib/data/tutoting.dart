@@ -1,9 +1,11 @@
 class Tutoring {
   late String category;
+  late String path;
+  late String name;
 
   Tutoring(
-    String category
-  ) {
-    category = category;
-  }
+    this.category,
+    this.path,
+    this.name
+  ) {}
 }

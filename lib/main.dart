@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tmp/bindings/class_binding.dart';
 import 'package:tmp/view/classes/class_detail.dart';
 import 'package:tmp/view/classes/classes_view.dart';
 import 'package:tmp/view/info/info_view.dart';
@@ -41,7 +42,8 @@ class _MyAppState extends State<MyApp> {
         GetPage(
           name: '/classes',
           page: () => ClassesView(),
-          transition: Transition.noTransition
+          transition: Transition.noTransition,
+          binding: ClassBinding()
         ),
         GetPage(
           name: '/class_detail',
