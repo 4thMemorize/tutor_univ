@@ -3,6 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:tmp/controllers/app_controller.dart';
+import 'package:tmp/controllers/my_list_controller.dart';
 import 'package:tmp/view/classes/class_card.dart';
 import 'package:tmp/view/my_list/my_list_card_student.dart';
 import 'package:tmp/view/my_list/my_list_card_teacher.dart';
@@ -109,16 +110,32 @@ class _MyListViewState extends State<MyListView> {
               height: 10,
             ),
             Expanded(
-              child: ListView(
-                children: appController.appMode.value == Mode.Tutor
-                  ? [MyListCardT(), MyListCardT(), MyListCardT()]
-                  : [MyListCardS(), MyListCardS()]
-              ),
+              child: appController.appMode.value == Mode.Tutor
+                ? ListView(children: [MyListCardT(), MyListCardT()],)
+                : listBuilder(context)
             )
           ]
         )
       );
       })
     );
+  }
+
+  Widget listBuilder(BuildContext context) {
+    MyListController myListController;
+    if(Get.isRegistered<MyListController>()) {
+      myListController = Get.find<MyListController>();
+    }
+    else {
+      myListController = Get.put(MyListController());
+    }
+    return ListView.builder(
+      itemCount: myListController.tutoringList.length,
+      itemBuilder: generate,
+    );
+  }
+
+  Widget generate(BuildContext context, int idx) {
+    return MyListCardS(myListController.tutoringList[idx])
   }
 }

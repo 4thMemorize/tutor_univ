@@ -10,6 +10,7 @@ import 'package:tmp/view/message/message_view.dart';
 import 'package:tmp/view/my_list/dashboard_student.dart';
 import 'package:tmp/view/my_list/dashboard_teacher.dart';
 import 'package:tmp/view/my_list/my_list_view.dart';
+import 'package:tmp/view/payment.dart';
 import 'package:tmp/view/splash.dart';
 
 void main() {
@@ -74,6 +75,11 @@ class _MyAppState extends State<MyApp> {
         GetPage(
           name: '/message_room',
           page: () => MessageRoom(),
+          transition: Transition.noTransition
+        ),
+        GetPage(
+          name: '/payment',
+          page: () => Payment(),
           transition: Transition.noTransition
         ),
         GetPage(

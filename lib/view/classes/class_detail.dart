@@ -6,6 +6,8 @@ import 'package:tmp/controllers/app_controller.dart';
 import 'package:tmp/controllers/class_controllder.dart';
 import 'package:tmp/view/bottom_nav.dart';
 
+import '../../controllers/message_controller.dart';
+
 class ClassDetail extends StatefulWidget {
   const ClassDetail({Key? key}) : super(key: key);
 
@@ -16,6 +18,7 @@ class ClassDetail extends StatefulWidget {
 class _ClassDetailState extends State<ClassDetail> {
   final AppController appController = Get.find<AppController>();
   final ClassController classController = Get.find<ClassController>();
+  final MessageController messageController = Get.find<MessageController>();
 
   @override
   Widget build(BuildContext context) {
@@ -153,7 +156,8 @@ class _ClassDetailState extends State<ClassDetail> {
                     desc(),
                     GestureDetector(
                       onTap: () {
-
+                        messageController.messageList.add(Message('inquiry', classController.selectedClass!));
+                        Get.toNamed('/message_room');
                       },
                       child: Container(
                         child: Container(

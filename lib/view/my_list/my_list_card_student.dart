@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:tmp/data/ongoing_tutoring.dart';
 
 class MyListCardS extends StatelessWidget {
-  const MyListCardS(
-    {Key? key}) : super(key: key);
+  OngoingTutoring item;
+  MyListCardS(
+    {Key? key, required this.item}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +56,7 @@ class MyListCardS extends StatelessWidget {
                       Container(
                         height: 40,
                         child: Text(
-                          'Class Name',
+                          '${item.name} classes',
                           style: TextStyle(
                             fontSize: 26,
                             fontWeight: FontWeight.w600

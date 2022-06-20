@@ -7,5 +7,5 @@ class Tutoring {
     this.category,
     this.path,
     this.name
-  ) {}
+  );
 }
