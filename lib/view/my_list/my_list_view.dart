@@ -136,6 +136,7 @@ class _MyListViewState extends State<MyListView> {
   }
 
   Widget generate(BuildContext context, int idx) {
+    final MyListController myListController = Get.find<MyListController>();
     return MyListCardS(myListController.tutoringList[idx]);
   }
 }

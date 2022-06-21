@@ -64,7 +64,9 @@ class BottomNavBar extends StatelessWidget {
                         child: Icon(
                           Icons.list_alt_outlined,
                           size: 30,
-                          color: Colors.black,
+                          color: currentTab == Routes.myList
+                            ? Color(0xFF33FFCC)
+                            : Colors.black
                         )
                       ),
                     ),

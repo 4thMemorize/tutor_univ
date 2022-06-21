@@ -158,7 +158,7 @@ class _MessageRoomState extends State<MessageRoom> {
                               ),
                               child: Text(
                                 '전송',
-                                style: TextStyle(fontFamily: 'NotoSans', fontWeight: FontWeight.w400, fontSize: 12, color: Color(0xffffffff)),
+                                style: TextStyle(fontFamily: 'NotoSans', fontWeight: FontWeight.w400, fontSize: 12, color: Color(0xff000000)),
                               ),
                             ),
                           )

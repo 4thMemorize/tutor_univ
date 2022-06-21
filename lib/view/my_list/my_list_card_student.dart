@@ -5,8 +5,7 @@ import 'package:tmp/data/ongoing_tutoring.dart';
 
 class MyListCardS extends StatelessWidget {
   OngoingTutoring item;
-  MyListCardS(
-    {Key? key, required this.item}) : super(key: key);
+  MyListCardS(this.item);
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,11 @@ class MyListCardS extends StatelessWidget {
                   ),
                   decoration: BoxDecoration(
                     color: Colors.black,
-                    borderRadius: BorderRadius.circular(15)
+                    borderRadius: BorderRadius.circular(15),
+                    image: DecorationImage(
+                      image: AssetImage(item.path),
+                      fit: BoxFit.fill
+                    )
                   ),
                 ),
                 Container(
@@ -56,7 +59,7 @@ class MyListCardS extends StatelessWidget {
                       Container(
                         height: 40,
                         child: Text(
-                          '${item.name} classes',
+                          '${item.name} class',
                           style: TextStyle(
                             fontSize: 26,
                             fontWeight: FontWeight.w600
